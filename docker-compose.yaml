@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:9.2
+    container_name: postgres92
+    environment:
+      POSTGRES_USER: user_alyson
+      POSTGRES_PASSWORD: computacao2014
+      POSTGRES_DB: db_apitask
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_apitask:/var/lib/postgresql/data
+
+volumes:
+  postgres_data_apitask:
+    driver: local
